@@ -19,12 +19,21 @@ Works with **Claude Code**, **Codex**, **Claude Desktop**, **Cursor**, **VS Code
 
 ### Claude Code
 
+Three installation scopes are available:
+
+| Scope | Flag | Config file | Use case |
+|-------|------|-------------|----------|
+| **local** | `-s local` | `.mcp.json` | This project only (default) |
+| **project** | `-s project` | `.claude/mcp.json` | Shared with team via git |
+| **user** | `-s user` | `~/.claude/mcp.json` | All your projects |
+
 ```bash
-claude mcp add pandavideo \
-  --transport stdio \
+claude mcp add pandavideo -s user \
   -e PANDAVIDEO_API_KEY=your-key \
   -- npx -y github:pauloFroes/mcp-pandavideo
 ```
+
+> Replace `-s user` with `-s local` or `-s project` as needed.
 
 ### Codex
 
